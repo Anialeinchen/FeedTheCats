@@ -16,6 +16,11 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        <activity android:name=".Info" android:label="Info"/>
+        <activity android:name=".Configurations" android:label="Configurations"/>
+        <activity android:name=".ConfigurationCatDetails" android:label="ConfigurationsCat"/>
+        <activity android:name=".CatDetails" android:label="CatDetails"/>
+        <activity android:name=".SignInUp" android:label="SignInUp"/>
     </application>
 
 </manifest>

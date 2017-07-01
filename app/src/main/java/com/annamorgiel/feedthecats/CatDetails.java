@@ -8,10 +8,11 @@ import android.support.v7.app.AppCompatActivity;
  * Created by Anna Morgiel on 01.07.2017.
  */
 
-public class Info extends AppCompatActivity {
+public class CatDetails extends AppCompatActivity {
+
     @Override
     public void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.info);
+        setContentView(R.layout.cat_details);
     }
 }
