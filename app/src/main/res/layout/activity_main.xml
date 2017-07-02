@@ -7,6 +7,7 @@
     tools:context="com.annamorgiel.feedthecats.MainActivity">
 
     <EditText
+        android:id="@+id/food_main"
         android:layout_width="@dimen/line_ev"
         android:layout_height="wrap_content"
         android:layout_gravity="center"
