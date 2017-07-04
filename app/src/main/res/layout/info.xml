@@ -1,19 +1,23 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:gravity="center">
+    android:gravity="center"
+    android:orientation="vertical">
 
     <TextView
+        android:id="@+id/tv_info"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
         android:gravity="center"
-        android:textSize="26sp"
-        android:layout_width="wrap_content"
         android:paddingBottom="10dp"
-        android:layout_height="wrap_content"
-        android:text="If you and your furry little friends \n want to tell me about bugs \n or just share your love, \n you can reach me under \n amorgiel@gmail.com \n \nThanks! \n\n Anna Morgiel"/>
+        android:text="If you and your furry little friends \n want to tell me about bugs \n or just share your love, \n you can reach me under \n amorgiel@gmail.com \n \nThanks! \n\n Anna Morgiel"
+        android:textSize="26sp" />
+
     <ImageView
-        android:layout_gravity="center"
+        android:id="@+id/baby_foto"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:background="@drawable/baby"/>
+        android:layout_gravity="center"
+        android:background="@drawable/baby" />
 </LinearLayout>

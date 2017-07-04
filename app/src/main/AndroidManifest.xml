@@ -9,18 +9,35 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".MainActivity">
+        <activity
+            android:name=".MainActivity"
+            android:screenOrientation="portrait">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".Info" android:label="Info"/>
-        <activity android:name=".Configurations" android:label="Configurations"/>
-        <activity android:name=".ConfigurationCatDetails" android:label="ConfigurationsCat"/>
-        <activity android:name=".CatDetails" android:label="CatDetails"/>
-        <activity android:name=".SignInUp" android:label="SignInUp"/>
+        <activity
+            android:name=".Info"
+            android:label="Info"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".Configurations"
+            android:label="Configurations"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".ConfigurationCatDetails"
+            android:label="ConfigurationsCat"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".CatDetails"
+            android:label="CatDetails"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".SignInUp"
+            android:label="SignInUp"
+            android:screenOrientation="portrait" />
     </application>
 
 </manifest>

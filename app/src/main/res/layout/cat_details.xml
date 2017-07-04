@@ -1,21 +1,33 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:gravity="center">
+    android:gravity="center"
+    android:background="@color/colorPrimaryLight"
+    android:orientation="vertical">
 
     <EditText
+        android:id="@+id/name_cat_details"
         android:layout_width="@dimen/line_ev"
         android:layout_height="wrap_content"
-        android:hint="name"/>
+        android:hint="name" />
 
     <EditText
+        android:id="@+id/weight_cat_details"
         android:layout_width="@dimen/line_ev"
         android:layout_height="wrap_content"
-        android:hint="weight"/>
+        android:hint="weight" />
+
     <EditText
-        android:hint="food amount"
+        android:id="@+id/amount_cat_details"
         android:layout_width="@dimen/line_ev"
-        android:layout_height="wrap_content" />
+        android:layout_height="wrap_content"
+        android:hint="food amount" />
+
+    <EditText
+        android:id="@+id/food_name_cat_details"
+        android:layout_width="@dimen/line_ev"
+        android:layout_height="wrap_content"
+        android:hint="food name (optional)" />
 
 </LinearLayout>
