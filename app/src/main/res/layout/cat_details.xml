@@ -2,32 +2,97 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:gravity="center"
     android:background="@color/colorPrimaryLight"
+    android:gravity="center"
     android:orientation="vertical">
 
-    <EditText
-        android:id="@+id/name_cat_details"
-        android:layout_width="@dimen/line_ev"
-        android:layout_height="wrap_content"
-        android:hint="name" />
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
 
-    <EditText
-        android:id="@+id/weight_cat_details"
-        android:layout_width="@dimen/line_ev"
-        android:layout_height="wrap_content"
-        android:hint="weight" />
+        <ImageView
+            android:layout_width="60dp"
+            android:layout_height="60dp"
+            android:layout_gravity="start"
+            android:background="@drawable/ic_floral_right_border_outline_variant"
+            android:rotation="270" />
 
-    <EditText
-        android:id="@+id/amount_cat_details"
-        android:layout_width="@dimen/line_ev"
-        android:layout_height="wrap_content"
-        android:hint="food amount" />
+        <ImageView
+            android:layout_width="60dp"
+            android:layout_height="60dp"
+            android:layout_alignParentEnd="true"
+            android:layout_gravity="end"
+            android:background="@drawable/ic_floral_right_border_outline_variant" />
 
-    <EditText
-        android:id="@+id/food_name_cat_details"
-        android:layout_width="@dimen/line_ev"
-        android:layout_height="wrap_content"
-        android:hint="food name (optional)" />
+        <LinearLayout
+            android:gravity="center"
+            android:id="@+id/cat_details_ll"
+            android:layout_centerInParent="true"
+            android:orientation="vertical"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <EditText
+                android:padding="8dp"
+                android:textSize="26sp"
+                android:id="@+id/name_cat_details"
+                android:layout_width="@dimen/line_ev"
+                android:layout_height="wrap_content"
+                android:hint="name" />
+
+            <EditText
+                android:padding="8dp"
+                android:textSize="26sp"
+                android:id="@+id/weight_cat_details"
+                android:layout_width="@dimen/line_ev"
+                android:layout_height="wrap_content"
+                android:hint="weight"
+                android:inputType="numberSigned" />
+
+            <EditText
+                android:padding="8dp"
+                android:textSize="26sp"
+                android:id="@+id/food_weight_cat_details"
+                android:layout_width="@dimen/line_ev"
+                android:layout_height="wrap_content"
+                android:hint="food amount"
+                android:inputType="numberSigned" />
+
+            <EditText
+                android:padding="8dp"
+                android:textSize="26sp"
+                android:id="@+id/food_name_cat_details"
+                android:layout_width="@dimen/line_ev"
+                android:layout_height="wrap_content"
+                android:hint="food name (optional)" />
+
+            <Button
+                android:id="@+id/confirm_cat_detials"
+                android:layout_gravity="end"
+                android:layout_marginTop="36dp"
+                android:layout_marginEnd="54dp"
+                android:text="OK"
+                android:elevation="4dp"
+                android:background="@color/colorPrimaryDark"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+        </LinearLayout>
+        <ImageView
+            android:layout_width="60dp"
+            android:layout_height="60dp"
+            android:layout_alignParentBottom="true"
+            android:layout_gravity="end"
+            android:background="@drawable/ic_floral_right_border_outline_variant"
+            android:rotation="180" />
+
+        <ImageView
+            android:layout_width="60dp"
+            android:layout_height="60dp"
+            android:layout_alignParentBottom="true"
+            android:layout_alignParentEnd="true"
+            android:background="@drawable/ic_floral_right_border_outline_variant"
+            android:rotation="90" />
+
+    </RelativeLayout>
 
 </LinearLayout>
