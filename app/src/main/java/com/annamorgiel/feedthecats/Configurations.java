@@ -17,8 +17,10 @@ import butterknife.ButterKnife;
  */
 
 public class Configurations extends AppCompatActivity {
+    Cat[] ourCats;
     @BindView(R.id.conf_lv)
     ListView listView;
+
     @Override
     public void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -27,6 +29,12 @@ public class Configurations extends AppCompatActivity {
 
         String[] values = new String[]{"Blaubi", "Bailey", "Karo"
         };
+
+        ourCats = new Cat[2];
+        ourCats[0] = new Cat(values[0]);
+        ourCats[1] = new Cat(values[1]);
+        ourCats[2] = new Cat(values[2]);
+
 
         ArrayAdapter<String> adapter = new ArrayAdapter<String>(this,
                 R.layout.configuration_cat_details, R.id.tv_conf_cat_name, values);
@@ -40,7 +48,6 @@ public class Configurations extends AppCompatActivity {
 
                 // ListView Clicked item index
                 int itemPosition = position;
-
                 // ListView Clicked item value
                 String itemValue = (String) listView.getItemAtPosition(position);
 

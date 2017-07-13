@@ -42,13 +42,6 @@
 
         </LinearLayout>
 
-        <ProgressBar
-            android:layout_gravity="center"
-            android:id="@+id/main_progress_bar"
-            android:layout_width="@dimen/line_ev"
-            android:layout_height="wrap_content"
-            style="@android:style/Widget.Holo.Light.ProgressBar.Horizontal"
-            />
 
     </LinearLayout>
 

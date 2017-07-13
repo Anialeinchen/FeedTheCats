@@ -8,19 +8,37 @@ import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
 import android.view.View;
-import android.widget.AdapterView;
-import android.widget.ArrayAdapter;
-import android.widget.ListView;
+import android.widget.Button;
+import android.widget.CheckBox;
+import android.widget.ProgressBar;
+import android.widget.SeekBar;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
 
 public class MainActivity extends AppCompatActivity {
-    @BindView(R.id.lv_main)
-    ListView listView;
+    @BindView(R.id.seekbar_tv)
+    TextView seekbarTv;
+    @BindView(R.id.seekbar)
+    SeekBar seekbar;
+    @BindView(R.id.bailey_cb)
+    CheckBox addFoodBailey;
+    @BindView(R.id.blaubi_cb)
+    CheckBox addFoodBlaubi;
+    @BindView(R.id.main_progress_bar_blaubi)
+    ProgressBar blaubiTotalFoodAmount;
+    @BindView(R.id.main_progress_bar_bailey)
+    ProgressBar baileyTotalFoodAmount;
     @BindView(R.id.toolbar)
     Toolbar toolbar;
+    @BindView(R.id.confirm_cat_detials)
+    Button addFood;
+    private int currentFoodAmount;
+    private int newFood;
+    private int foodTotal;
+    public static final int FOOD_TOTAL = 200;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -29,36 +47,37 @@ public class MainActivity extends AppCompatActivity {
         ButterKnife.bind(this);
         setSupportActionBar(toolbar);
 
-        String[] values = new String[]{"Blaubi", "Bailey", "Karo"
-        };
-
-        final ArrayAdapter<String> adapter = new ArrayAdapter<String>(this,
-                R.layout.cat_main, R.id.tv_main_cat_name, values);
-
-        listView.setAdapter(adapter);
-        listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
-
-            @Override
-            public void onItemClick(AdapterView<?> parent, View view,
-                                    int position, long id) {
-
-                // ListView Clicked item index
-                int itemPosition = position;
-
-                // ListView Clicked item value
-                String itemValue = (String) listView.getItemAtPosition(position);
-
-
-                // Show Alert
-                Toast.makeText(getApplicationContext(),
-                        "Position :" + itemPosition + "  ListItem : " + itemValue, Toast.LENGTH_LONG)
-                        .show();
-
-            }
-
-        });
+        initSeekBar();
+        addFoodBailey.setChecked(true);
+        addFoodBlaubi.setChecked(true);
+        confirm();
 
     }
+
+    private void confirm() {
+        addFood.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                if (addFoodBailey.isChecked()) {
+                    currentFoodAmount = baileyTotalFoodAmount.getProgress();
+                    newFood = seekbar.getProgress();
+                    foodTotal = currentFoodAmount + newFood;
+                    if (foodTotal >= FOOD_TOTAL) {
+                        Toast.makeText(MainActivity.this, "Das wäre " + (foodTotal - FOOD_TOTAL) + " Gramm zu viel!! \n höre sofort auf!",
+                                Toast.LENGTH_LONG).show();
+                    } else {
+                        baileyTotalFoodAmount.setProgress(foodTotal);
+                    }
+                }
+                if (addFoodBlaubi.isChecked()) {
+                    currentFoodAmount = blaubiTotalFoodAmount.getProgress();
+                    newFood = seekbar.getProgress();
+                    blaubiTotalFoodAmount.setProgress(currentFoodAmount + newFood);
+                }
+            }
+        });
+    }
+
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
@@ -82,5 +101,25 @@ public class MainActivity extends AppCompatActivity {
             default:
                 return super.onOptionsItemSelected(item);
         }
+    }
+
+    private void initSeekBar() {
+        seekbar.setMax(FOOD_TOTAL);
+        seekbar.setOnSeekBarChangeListener(new SeekBar.OnSeekBarChangeListener() {
+            @Override
+            public void onProgressChanged(SeekBar seekBar, int progress, boolean fromUser) {
+                seekbarTv.setText(String.valueOf(progress));
+            }
+
+            @Override
+            public void onStartTrackingTouch(SeekBar seekBar) {
+
+            }
+
+            @Override
+            public void onStopTrackingTouch(SeekBar seekBar) {
+
+            }
+        });
     }
 }
